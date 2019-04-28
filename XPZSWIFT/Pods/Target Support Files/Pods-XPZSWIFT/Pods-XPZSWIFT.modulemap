@@ -1,0 +1,6 @@
+framework module Pods_XPZSWIFT {
+  umbrella header "Pods-XPZSWIFT-umbrella.h"
+
+  export *
+  module * { export * }
+}
