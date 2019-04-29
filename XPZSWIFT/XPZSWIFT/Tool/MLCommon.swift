@@ -25,4 +25,5 @@ let kNavBarHeight:CGFloat = 44.0
 
 
 let httpUrl = "http://www.xiaopuzi.net/app/"
+let imageUrlString = "http://cos.xiaopuzi.net"
 
