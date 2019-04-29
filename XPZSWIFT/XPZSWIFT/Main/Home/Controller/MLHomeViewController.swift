@@ -11,7 +11,8 @@ import UIKit
 class MLHomeViewController: UIViewController {
     let dispatchGroup = DispatchGroup()
     var collectionView:MLCollectionView? = nil
-    
+    var frameModel:MLFrameModel = MLFrameModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,7 +20,8 @@ class MLHomeViewController: UIViewController {
         requestBannerData()
         requestInfoData()
         dispatchGroup.notify(queue: .main) {
-            
+            self.collectionView?.frameModel = self.frameModel
+            self.collectionView?.reloadData()
         }
 
     }
@@ -31,13 +33,12 @@ class MLHomeViewController: UIViewController {
     func configureCollectionView() {
         
     let layout = UICollectionViewFlowLayout()
-    layout.minimumLineSpacing = 0
-    layout.minimumInteritemSpacing = 0
-    layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
+//    layout.minimumLineSpacing = 0
+//    layout.minimumInteritemSpacing = 0
+//    layout.scrollDirection = UICollectionView.ScrollDirection.vertical
+//    layout.headerReferenceSize = CGSize(width: kscreenWidth, height: 100)
     collectionView = MLCollectionView.init(frame: CGRect(x: 0, y: 0, width: kscreenWidth, height: kscreenHeight-kNavBarHeight-kStatusBarHeight-kHomeSafeHeight-kTabbar_height), collectionViewLayout: layout)
-    collectionView?.backgroundColor = .magenta
     view.addSubview(collectionView as! MLCollectionView)
-        
     }
     
 }
@@ -46,8 +47,18 @@ extension MLHomeViewController{
     /// 请求轮播图数据
     func requestBannerData() {
         dispatchGroup.enter()
-        [MLNetRequestModel.requestData(methodType: .get, Url: MLHttPUrlString.bannerString(), finishCallBack: { (resonse) in
-            
+        [MLNetRequestModel.requestData(methodType: .get, Url: MLHttPUrlString.bannerString(), finishCallBack: { (response) in
+            guard let resultDic = response as? [String : NSObject] else { return }
+            guard let success = resultDic["success"] as? Bool else { return }
+            if success{
+            guard let entity = resultDic["entity"] as? [String : NSObject] else { return }
+            guard let indexCenterBanner = entity["indexCenterBanner"] as? [Any] else { return }
+
+            for dict in indexCenterBanner{
+                let model = MLCycleModel.init(dict: dict as! [String : Any])
+            self.frameModel.indexCenterBanner.append(model)
+            }
+            }
             self.dispatchGroup.leave()
         })]
     }

@@ -15,8 +15,11 @@ class MLNetRequestModel: NSObject {
         let requestType:HTTPMethod = methodType == .get ?  HTTPMethod.get:HTTPMethod.post
         Alamofire.request(Url, method: requestType, parameters: param).responseJSON{
             (response) in
-            
-            finishCallBack(response as AnyObject)
+            guard let result = response.result.value else {
+                print(response.result.error)
+                return
+            }
+            finishCallBack(result as AnyObject)
         }
     }
     

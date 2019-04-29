@@ -27,6 +27,9 @@
 		952759A72275994200E92FC9 /* MLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759A52275994100E92FC9 /* MLHomeViewController.swift */; };
 		952759A92275A4C400E92FC9 /* MLCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759A82275A4C400E92FC9 /* MLCollectionView.swift */; };
 		952759AB2275A4D700E92FC9 /* MLCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759AA2275A4D700E92FC9 /* MLCollectionViewCell.swift */; };
+		952759AD22768FE200E92FC9 /* MLHeadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759AC22768FE200E92FC9 /* MLHeadCollectionReusableView.swift */; };
+		952759AF2276DA4200E92FC9 /* MLCycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759AE2276DA4200E92FC9 /* MLCycleModel.swift */; };
+		952759B12276EC5F00E92FC9 /* MLFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759B02276EC5F00E92FC9 /* MLFrameModel.swift */; };
 		F3DACBDE392EDF8D5F91C3C1 /* Pods_XPZSWIFT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542092A85036BD0142984788 /* Pods_XPZSWIFT.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,9 @@
 		952759A52275994100E92FC9 /* MLHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLHomeViewController.swift; sourceTree = "<group>"; };
 		952759A82275A4C400E92FC9 /* MLCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCollectionView.swift; sourceTree = "<group>"; };
 		952759AA2275A4D700E92FC9 /* MLCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCollectionViewCell.swift; sourceTree = "<group>"; };
+		952759AC22768FE200E92FC9 /* MLHeadCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHeadCollectionReusableView.swift; sourceTree = "<group>"; };
+		952759AE2276DA4200E92FC9 /* MLCycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCycleModel.swift; sourceTree = "<group>"; };
+		952759B02276EC5F00E92FC9 /* MLFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLFrameModel.swift; sourceTree = "<group>"; };
 		E4E0B68486CD682DCD3A912F /* Pods-XPZSWIFT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XPZSWIFT.debug.xcconfig"; path = "Target Support Files/Pods-XPZSWIFT/Pods-XPZSWIFT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				952759A82275A4C400E92FC9 /* MLCollectionView.swift */,
+				952759AC22768FE200E92FC9 /* MLHeadCollectionReusableView.swift */,
 				952759AA2275A4D700E92FC9 /* MLCollectionViewCell.swift */,
 			);
 			path = View;
@@ -255,6 +262,8 @@
 		952759A62275994100E92FC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				952759AE2276DA4200E92FC9 /* MLCycleModel.swift */,
+				952759B02276EC5F00E92FC9 /* MLFrameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,7 +288,7 @@
 				9527594D2272A7C400E92FC9 /* Sources */,
 				9527594E2272A7C400E92FC9 /* Frameworks */,
 				9527594F2272A7C400E92FC9 /* Resources */,
-				7A5724F54D8CAACEF792950F /* [CP] Embed Pods Frameworks */,
+				F33C0B2ECB2CF650493333E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,7 +427,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7A5724F54D8CAACEF792950F /* [CP] Embed Pods Frameworks */ = {
+		F33C0B2ECB2CF650493333E7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -447,9 +456,12 @@
 				952759A22275946100E92FC9 /* MLHttPUrlString.swift in Sources */,
 				952759952272F4DA00E92FC9 /* MLCourseViewController.swift in Sources */,
 				9527598B2272F25C00E92FC9 /* MLNavigationViewController.swift in Sources */,
+				952759AD22768FE200E92FC9 /* MLHeadCollectionReusableView.swift in Sources */,
 				952759AB2275A4D700E92FC9 /* MLCollectionViewCell.swift in Sources */,
+				952759AF2276DA4200E92FC9 /* MLCycleModel.swift in Sources */,
 				952759552272A7C400E92FC9 /* AppDelegate.swift in Sources */,
 				952759872272D1FA00E92FC9 /* MLTabBarControllerViewController.swift in Sources */,
+				952759B12276EC5F00E92FC9 /* MLFrameModel.swift in Sources */,
 				952759992272F4FA00E92FC9 /* MLCommunicationViewController.swift in Sources */,
 				9527599B2272F51300E92FC9 /* MLLIveCourseViewController.swift in Sources */,
 				952759832272AE6900E92FC9 /* MLPageViewController.swift in Sources */,

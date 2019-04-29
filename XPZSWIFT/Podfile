@@ -7,4 +7,5 @@ target 'XPZSWIFT' do
 pod 'Alamofire'
 pod 'Kingfisher'
 pod 'SnapKit'
+pod 'SDCycleScrollView'
 end
