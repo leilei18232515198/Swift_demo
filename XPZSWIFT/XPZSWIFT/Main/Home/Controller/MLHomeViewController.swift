@@ -33,10 +33,7 @@ class MLHomeViewController: UIViewController {
     func configureCollectionView() {
         
     let layout = UICollectionViewFlowLayout()
-//    layout.minimumLineSpacing = 0
-//    layout.minimumInteritemSpacing = 0
-//    layout.scrollDirection = UICollectionView.ScrollDirection.vertical
-//    layout.headerReferenceSize = CGSize(width: kscreenWidth, height: 100)
+    layout.scrollDirection = UICollectionView.ScrollDirection.vertical
     collectionView = MLCollectionView.init(frame: CGRect(x: 0, y: 0, width: kscreenWidth, height: kscreenHeight-kNavBarHeight-kStatusBarHeight-kHomeSafeHeight-kTabbar_height), collectionViewLayout: layout)
     view.addSubview(collectionView as! MLCollectionView)
     }
@@ -47,7 +44,7 @@ extension MLHomeViewController{
     /// 请求轮播图数据
     func requestBannerData() {
         dispatchGroup.enter()
-        [MLNetRequestModel.requestData(methodType: .get, Url: MLHttPUrlString.bannerString(), finishCallBack: { (response) in
+        MLNetRequestModel.requestData(methodType: .get, Url: MLHttPUrlString.bannerString(), finishCallBack: { (response) in
             guard let resultDic = response as? [String : NSObject] else { return }
             guard let success = resultDic["success"] as? Bool else { return }
             if success{
@@ -60,17 +57,28 @@ extension MLHomeViewController{
             }
             }
             self.dispatchGroup.leave()
-        })]
+        })
     }
     
     /// 请求列表信息
     func requestInfoData() {
         dispatchGroup.enter()
         let dic = ["queryMiShop.localArea":"北京市"]
-        [MLNetRequestModel.requestData(methodType: .post, Url: MLHttPUrlString.appIndexString(), finishCallBack: { (response) in
-
-            self.dispatchGroup.leave()
-        })]
+        MLNetRequestModel.requestData(methodType: .post, Url: MLHttPUrlString.appIndexString(),param: dic, finishCallBack: { (response) in
+            guard let resultDic = response as? [String : NSObject] else { return }
+            guard let success = resultDic["success"] as? Bool else { return }
+            if success{
+                guard let entity = resultDic["entity"] as? [String : NSObject] else { return }
+                guard let videoCourseList = entity["videoCourseList"] as? [Any] else { return }
+                
+                for dict in videoCourseList{
+                let model = MLVideoCourseModel.init(dict: dict as! [String : Any])
+                    let frameModel:MLVideoCourseFrameModel = MLVideoCourseFrameModel.init(model)
+            self.frameModel.videoCourseList.append(frameModel)
+                }
+                }
+                self.dispatchGroup.leave()
+            
+            })
     }
-
 }

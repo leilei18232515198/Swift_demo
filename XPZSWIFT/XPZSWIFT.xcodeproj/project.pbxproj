@@ -30,6 +30,11 @@
 		952759AD22768FE200E92FC9 /* MLHeadCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759AC22768FE200E92FC9 /* MLHeadCollectionReusableView.swift */; };
 		952759AF2276DA4200E92FC9 /* MLCycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759AE2276DA4200E92FC9 /* MLCycleModel.swift */; };
 		952759B12276EC5F00E92FC9 /* MLFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759B02276EC5F00E92FC9 /* MLFrameModel.swift */; };
+		952759B32277DE4B00E92FC9 /* MLBtnCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759B22277DE4B00E92FC9 /* MLBtnCollectionView.swift */; };
+		952759B52277DE5F00E92FC9 /* MLBtnCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759B42277DE5F00E92FC9 /* MLBtnCollectionViewCell.swift */; };
+		952759B722781D5100E92FC9 /* MLSecondCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759B622781D5100E92FC9 /* MLSecondCollectionReusableView.swift */; };
+		952759B92278301300E92FC9 /* MLVideoCourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759B82278301300E92FC9 /* MLVideoCourseModel.swift */; };
+		952759BB2278397800E92FC9 /* MLVideoCourseFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952759BA2278397800E92FC9 /* MLVideoCourseFrameModel.swift */; };
 		F3DACBDE392EDF8D5F91C3C1 /* Pods_XPZSWIFT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 542092A85036BD0142984788 /* Pods_XPZSWIFT.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +87,11 @@
 		952759AC22768FE200E92FC9 /* MLHeadCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLHeadCollectionReusableView.swift; sourceTree = "<group>"; };
 		952759AE2276DA4200E92FC9 /* MLCycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCycleModel.swift; sourceTree = "<group>"; };
 		952759B02276EC5F00E92FC9 /* MLFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLFrameModel.swift; sourceTree = "<group>"; };
+		952759B22277DE4B00E92FC9 /* MLBtnCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBtnCollectionView.swift; sourceTree = "<group>"; };
+		952759B42277DE5F00E92FC9 /* MLBtnCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLBtnCollectionViewCell.swift; sourceTree = "<group>"; };
+		952759B622781D5100E92FC9 /* MLSecondCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLSecondCollectionReusableView.swift; sourceTree = "<group>"; };
+		952759B82278301300E92FC9 /* MLVideoCourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLVideoCourseModel.swift; sourceTree = "<group>"; };
+		952759BA2278397800E92FC9 /* MLVideoCourseFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLVideoCourseFrameModel.swift; sourceTree = "<group>"; };
 		E4E0B68486CD682DCD3A912F /* Pods-XPZSWIFT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XPZSWIFT.debug.xcconfig"; path = "Target Support Files/Pods-XPZSWIFT/Pods-XPZSWIFT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +257,9 @@
 				952759A82275A4C400E92FC9 /* MLCollectionView.swift */,
 				952759AC22768FE200E92FC9 /* MLHeadCollectionReusableView.swift */,
 				952759AA2275A4D700E92FC9 /* MLCollectionViewCell.swift */,
+				952759B22277DE4B00E92FC9 /* MLBtnCollectionView.swift */,
+				952759B42277DE5F00E92FC9 /* MLBtnCollectionViewCell.swift */,
+				952759B622781D5100E92FC9 /* MLSecondCollectionReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,6 +277,8 @@
 			children = (
 				952759AE2276DA4200E92FC9 /* MLCycleModel.swift */,
 				952759B02276EC5F00E92FC9 /* MLFrameModel.swift */,
+				952759B82278301300E92FC9 /* MLVideoCourseModel.swift */,
+				952759BA2278397800E92FC9 /* MLVideoCourseFrameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -459,7 +474,12 @@
 				952759AD22768FE200E92FC9 /* MLHeadCollectionReusableView.swift in Sources */,
 				952759AB2275A4D700E92FC9 /* MLCollectionViewCell.swift in Sources */,
 				952759AF2276DA4200E92FC9 /* MLCycleModel.swift in Sources */,
+				952759B722781D5100E92FC9 /* MLSecondCollectionReusableView.swift in Sources */,
+				952759B52277DE5F00E92FC9 /* MLBtnCollectionViewCell.swift in Sources */,
+				952759B32277DE4B00E92FC9 /* MLBtnCollectionView.swift in Sources */,
 				952759552272A7C400E92FC9 /* AppDelegate.swift in Sources */,
+				952759B92278301300E92FC9 /* MLVideoCourseModel.swift in Sources */,
+				952759BB2278397800E92FC9 /* MLVideoCourseFrameModel.swift in Sources */,
 				952759872272D1FA00E92FC9 /* MLTabBarControllerViewController.swift in Sources */,
 				952759B12276EC5F00E92FC9 /* MLFrameModel.swift in Sources */,
 				952759992272F4FA00E92FC9 /* MLCommunicationViewController.swift in Sources */,

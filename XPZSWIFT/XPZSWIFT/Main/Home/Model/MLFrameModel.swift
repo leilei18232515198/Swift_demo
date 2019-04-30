@@ -11,15 +11,9 @@ import UIKit
 class MLFrameModel: NSObject {
 
     @objc var indexCenterBanner:[MLCycleModel] = [MLCycleModel]()
-    var headHeight:CGFloat = kscreenWidth/2
+    @objc var videoCourseList:[MLVideoCourseFrameModel] = [MLVideoCourseFrameModel]()
+    var headHeight:CGFloat = kscreenWidth/2+80
+    var secondHeight:CGFloat = 50
     
-//    var title:String{
-//        set{
-//            _tittle=newValue
-//        }
-//        get{
-//            return tittle
-//        }
-//    }
     
 }
