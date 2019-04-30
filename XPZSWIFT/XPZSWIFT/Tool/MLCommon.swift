@@ -16,6 +16,14 @@ enum MLMethodType {
     case get,post
 }
 
+enum MLButtonType:Int {
+    case video = 0
+    case found
+    case information
+    case piano
+    case mall
+}
+
 let kscreenWidth = UIScreen.main.bounds.size.width
 let kscreenHeight = UIScreen.main.bounds.size.height
 let kTabbar_height:CGFloat = 49

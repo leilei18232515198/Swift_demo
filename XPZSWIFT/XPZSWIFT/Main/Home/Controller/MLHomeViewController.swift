@@ -36,6 +36,9 @@ class MLHomeViewController: UIViewController {
     layout.scrollDirection = UICollectionView.ScrollDirection.vertical
     collectionView = MLCollectionView.init(frame: CGRect(x: 0, y: 0, width: kscreenWidth, height: kscreenHeight-kNavBarHeight-kStatusBarHeight-kHomeSafeHeight-kTabbar_height), collectionViewLayout: layout)
     view.addSubview(collectionView as! MLCollectionView)
+    collectionView?.callBackBlock = {model in
+        print("===============\(model.name)")
+    }
     }
     
 }

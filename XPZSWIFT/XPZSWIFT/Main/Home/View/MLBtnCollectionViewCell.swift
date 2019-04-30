@@ -37,6 +37,7 @@ class MLBtnCollectionViewCell: UICollectionViewCell {
         let button:UIButton = UIButton.init(type:UIButton.ButtonType.custom)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13.0)
         button.setTitleColor(UIColor.init(white: 0.5, alpha: 1), for: UIControl.State.normal)
+        button.isUserInteractionEnabled = false
         button.frame = self.bounds
         self.contentView.addSubview(button)
         self.button = button

@@ -10,10 +10,11 @@ import UIKit
 let CellID = "CellID"
 let headCellID = "headCellID"
 let secondCellID = "secondCellID"
-
+typealias didCellSelectHandle = (MLVideoCourseModel) -> ()
 
 class MLCollectionView: UICollectionView {
     
+    @objc var callBackBlock:didCellSelectHandle?
    @objc var frameModel:MLFrameModel = MLFrameModel()
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -54,6 +55,7 @@ extension MLCollectionView : UICollectionViewDelegate,UICollectionViewDataSource
         var headView:UICollectionReusableView!
         if indexPath.section == 0{
         let firstView:MLHeadCollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headCellID, for: indexPath) as! MLHeadCollectionReusableView
+            firstView.btnCollectionView?.itemDelegate = self
         firstView.array = self.frameModel.indexCenterBanner
         headView = firstView
         }else{
@@ -89,6 +91,37 @@ extension MLCollectionView : UICollectionViewDelegate,UICollectionViewDataSource
     // 最小行间距
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let frameModel:MLVideoCourseFrameModel = self.frameModel.videoCourseList[indexPath.row]
+        self.callBackBlock?(frameModel.videoModel!)
+    }
+}
+
+extension MLCollectionView:didCellDelegate{
+    
+    func didItemWithRow(row:Int) -> (){
+        switch row {
+        case MLButtonType.video.rawValue:
+            
+        break
+        case MLButtonType.found.rawValue:
+            
+            break
+        case MLButtonType.information.rawValue:
+            
+            break
+        case MLButtonType.piano.rawValue:
+            
+            break
+        case MLButtonType.mall.rawValue:
+            
+            break
+
+        default:
+        break
+        }
     }
 
 }

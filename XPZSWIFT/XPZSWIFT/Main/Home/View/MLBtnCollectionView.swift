@@ -8,12 +8,17 @@
 
 import UIKit
 
+@objc protocol didCellDelegate{
+    @objc optional func didItemWithRow(row:Int) -> ()
+    
+}
 let  btnCellID = "btnCellID"
 class MLBtnCollectionView: UICollectionView {
 
     var titleArray:[String]?
     var imageArray:[String]?
-
+    weak var itemDelegate:didCellDelegate?
+    
     class func creatButtonCollectionView(frame:CGRect, titleArray:[String],imageArray:[String]) -> MLBtnCollectionView{
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
@@ -53,5 +58,9 @@ extension MLBtnCollectionView : UICollectionViewDelegate,UICollectionViewDataSou
         return cell
     }
 
+//    case video,found,information,piano,mall
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.itemDelegate?.didItemWithRow?(row: indexPath.row)
+    }
 
 }
